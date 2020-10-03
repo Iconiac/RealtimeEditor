@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+            function refresh(){
+                var textContent = document.getElementById("editor").value;
+                document.getElementById("viewer").srcdoc = textContent;
+            }
+        </script>
+        
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .main{
+                background: #111111;
+                width: 100%;
+                height: 100%;
+                display: inline-flex;
+            }
+            #viewer{
+                background: white;
+                border:none;
+                width: 95%;
+                height: 100%;
+                margin: 10px;
+                
+            }
+            #editor{
+                width: 100%;
+                height: 100%;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    
+    
+    <body>
+        <div class="main">
+            <textarea id="editor" onkeyup="refresh()"></textarea>
+            <iframe id="viewer"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
